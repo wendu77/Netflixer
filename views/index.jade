@@ -1,0 +1,42 @@
+extends layout
+block content
+  header
+    .container 
+      .row.intro
+        if error 
+        #error 
+          p #{error} 
+        a(href='/')
+          img.img-responsive#logo(src="https://i.imgur.com/qn367L8.png" alt="logo")
+        hr
+        h4#words Welcome to Netflixer, the ultimate Netflix companion. Discover the movies, shows, and documentaries that your favorite actors / actresses are starring in on Netflix. 
+        blockquote  
+          h5 Psst...really like the film? Click the image to buy it on amazon!
+        //- MODAL CODE
+        //- h3.header Stalk your favorites on Netflix
+        //- button.btn.btn-primary(type="button", data-toggle="modal", data-target="#info") Learn more
+        //- .modal.fade#info(role="dialog")
+        //-     .modal-dialog
+        //-         .modal-content
+        //-           .modal-header
+        //-             button.close(type="button", data-dismiss="modal")&times;
+        //-             h3 Some header info
+        //-           .modal-body
+        //-             p Some body text
+        //-           .modal-footer
+        //-             p Some footer text 
+  section 
+    .container 
+      .row 
+        form.col-md-4.col-md-offset-4.form-group(action="/" method="GET")
+          input.form-control(type="text" placeholder="enter actor/actress name | i.e. Denzel Washington" name="actor")
+          input.form-control.btn#search(type="submit" value="search")
+          a.form-control.btn#reset(href='/') reset
+      .row#actor
+        each result in results
+          li.col-md-3#listing
+            a(href='https://www.amazon.com/s/ref=nb_sb_noss_1/163-9108939-5476521?url=search-alias%3Dmovies-tv&field-keywords=' + '#{result.show_title}')
+              img.img-responsive#poster(src='#{result.poster}', alt='#{result.show_title}')
+            h5 #{result.show_title}
+            p Release Year: #{result.release_year}
+            p Rating: #{result.rating}      

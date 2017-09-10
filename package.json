@@ -1,0 +1,26 @@
+{
+  "name": "netflixer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wendu77/netflixer.git"
+  },
+  "author": "Chinwendu Opara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wendu77/netflixer/issues"
+  },
+  "homepage": "https://github.com/wendu77/netflixer#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "jade": "^1.11.0",
+    "node-fetch": "^1.7.3",
+    "serve-favicon": "^2.4.3"
+  }
+}
